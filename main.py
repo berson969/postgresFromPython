@@ -271,13 +271,3 @@ if __name__  == '__main__':
                 SELECT * FROM phones;
             """)
             print(cur.fetchall())  # запрос данных автоматически зафиксирует изменения
-
-            name = 'Eli'
-            last = 'Levy'
-            email = ''
-            cur.execute("""
-                    SELECT client_id, first_name, email FROM clients 
-                    WHERE (first_name=%s AND last_name=%s) OR (last_name=%s AND %s='');
-                    """, (name, last, last, name)
-                )
-            print(cur.fetchall())
